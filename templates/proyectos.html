@@ -1,0 +1,24 @@
+	{% extends 'base.html' %}
+	{% block titulo %} Proyectos{% endblock %}
+	{% block contenido %}
+	{% load staticfiles %}
+	<span class="ir-arriba icon-chevron-up"></span>
+	
+ 	
+ 	{% for proyecto in proyectos %}
+ 	<section class="barrio">
+ 	<h2>{{ proyecto.titulo }}</h2>
+ 	<hr>
+ 	<img src="{{ MEDIA_URL }}/media/{{ proyecto.url }}">
+ 	<h3>{{ proyecto.subtitulo}}</h3><br>
+ 	<div class="parteizq">
+ 		<p>{{ proyecto.descripcion_izq}}</p>
+ 	</div>
+ 	<div class="partederecha">
+ 		<p>{{ proyecto.descripcion_der}}</p>
+ 	</div>
+ 	</section>
+ 	{% endfor %}
+
+	
+{% endblock %}

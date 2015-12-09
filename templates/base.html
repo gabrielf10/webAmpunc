@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+	<meta charset="UTF-8">
+	<title>{% block titulo %} {% endblock %} | AMPUNC </title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}" media="screen">
+	<link rel="stylesheet" href="{% static '/css/fonts.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/icomon/fonts.css' %}">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+	<script src="{% static '/js/menu.js' %}"></script>
+	<script src="{% static '/js/jquery.slides.min.js' %}"></script>
+
+</head>
+<body>
+	<header>
+		<div class="marcagrande" align=right>
+			<a href="/"><img src="{% static "/img/marcagrande.png" %}" alt="imagen_de_la_marca_grande"></a>
+		</div>
+
+		<div class="menu_bar">
+			<a href="#" class="bt-menu"><span class="icon-menu"></span></a>
+		</div>
+		<nav class="desplegable">
+			<a href="/" ><img src="{% static "/img/casitamenu.png" %}" alt="imagen_del_menu_home"></a>
+			<ul class="menu">
+				<li><a href="/institucional">Institucional</a></li>
+				<li><a href="/proyectos">Proyectos</a></li>
+				<li><a href="/encuesta">Encuesta Habitacional</a></li>
+				<li><a href="/contacto" >Contacto</a></li>
+			</ul>	
+		</nav>
+	</header>
+	<div id="contenedor">
+	{% block contenido %} {% endblock %}
+	</div>	
+	
+	<footer>
+		<nav class="casa"> <img src="{% static "/img/casablanca.png" %}"> </nav>
+		<nav class="footerizq"><img src="{% static "/img/placeholder.png" %}">
+        <p>Calle Tulio Rossi, Bº SUTE,<br> manzana D casa 2, Pedro Molina,<br> Guaymallén - Mendoza.</p>
+  		</nav>
+        <nav class="footerder"><img src="{% static "/img/contactenos.png" %}">
+        <p>(261) 4455927 <br>facebook.com/MUTUALAMPUNC <br> mutual_ampunc@yahoo.com.ar</p>
+        </nav>
+    </footer>
+</body>
+</html>
+

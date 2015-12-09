@@ -1,0 +1,1162 @@
+@import url("normalize.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #FFFFFA;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+}
+/* AGREGADO GABRIEL 
+   slide principal*/
+
+   .main{
+   	width: 100%;
+   	margin: 2px auto;
+
+
+   }
+   .slides{
+   	width: 100%;
+   
+ 
+   }
+   .slides img{
+   	width: 100%;
+  	
+  
+   }
+   .slidesjs-container{
+   	height: 245px !important;
+   }
+   .slidesjs-pagination {
+   	background: #203773;
+   	list-style: none;
+   	overflow: hidden;
+
+   }
+
+   .slidesjs-pagination li {
+   	float: left;
+   	}
+
+   	.slidesjs-pagination li a{
+   		display: block;
+   		padding: 2.5px 20px;
+   		color: #fff;
+   		text-decoration: none;
+   	}
+
+   	.slidesjs-pagination li a:hover{
+   		background: #610B21;
+   	}
+   	.slides .active {
+   		background: #610B21;
+   	}
+
+   	.slidesjs-navigation {
+   		background:  #203773;
+   		color: #fff;
+   		text-decoration: none;
+   		display: inline-block;
+   		padding: 5px 20px;
+   		float: right;
+   	}
+   	.ir-arriba {
+		display:none;
+		padding:10px;
+		background:#024959;
+		font-size:25px;
+		color:#fff;
+		cursor:pointer;
+		position: fixed;
+		bottom:20px;
+		right:20px;
+		z-index: 1000;
+	}
+
+
+
+h1{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 2.3em;
+	color: #203773;
+}
+
+h2{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: 2em;
+	color: #203773;
+	clear: both;
+}
+
+h3{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.3em;
+	color: #203773;
+}
+
+h4{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+header {
+	width: 100%;
+}
+header nav{
+	width: 100%;
+	background: #203773;
+}
+
+header nav img{
+	float: left;
+	padding: 0.8em 0em 0em 5.3em;
+	  width: 3.5%;
+}
+
+.menu_bar {
+	display: none;
+	height: 15px;
+}
+
+.menu .active{
+	background-color: #6F0009;
+}
+
+header nav ul{
+	overflow: hidden;
+	list-style: none; 
+	padding-left: 1.5em;
+}
+header nav ul li{
+	float: left;
+}
+header nav ul li a{
+	color: #F1F1F1;
+	font-size: 1.2em;
+	padding: 1.2em 1em 1.2em 1em;
+	font-weight: semi-bold;
+	display: block;
+	text-decoration: none;
+}
+header nav ul li span{
+	padding-right: 10px;
+}
+header nav ul li:hover {
+	background: #375795;
+}
+
+
+.portada img {
+     width: 100%;
+}
+
+.marcagrande img{
+	width: 30%;
+	padding: 1em 5.3em 2em 2em;
+}
+
+.descripcion{
+	width: 100%;
+	padding: 2em 0em 4em 0em;
+	text-align: center;
+	background-color: #203773;
+}
+
+.descripcion h1{
+	color: #FFFFFA;
+}
+
+.descripcion h3{
+	color: #FFFFFA;
+}
+
+#preguntas{
+	padding: 5em 0em 0em 5.3em;
+}
+
+#preguntas .parteizq{
+	padding-bottom: 4em;
+	padding-top: 1em;
+}
+
+#preguntas .partederecha{
+	padding-top: 1em;
+}
+
+.textoinstitucional{
+	padding: 5em 0em 0em 5.3em
+}
+
+.textoinstitucional img {
+	width: 45%;
+	float: left;
+	padding-bottom: 2em;
+}
+
+.valores{
+	padding: 3em 0em 2em 5.3em;
+}
+
+.valores .parteizq{
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.valores .parteizq ul{
+	text-decoration: none;
+}
+
+.valores .parteizq .obj{
+	padding-top: 0em;
+	padding-bottom: 3em;
+}
+
+.valores .partederecha{
+	padding-bottom: 2em;
+}
+
+.barrios{
+	display: block;
+}
+
+.barrio{
+	padding: 3em 0em 20em 5.3em;
+}
+
+.barriodos{
+	padding: 3em 0em 0em 5.3em;	
+}
+
+.barriodos div{
+	padding-bottom: 4em;
+}
+
+.barriolonja{
+	padding: 3em 0em 0em 5.3em;		
+}
+
+.barriolonja div{
+	padding-bottom: 4em;
+}
+
+.barrio img{
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.barriodos img{
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.barriolonja img{
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.parteizq{
+	width: 45%;
+	float: left;
+	text-align: justify;
+}
+
+.partederecha{
+	width: 45%;
+	float: right;
+	padding-right: 5.3em;
+	padding-bottom: 2em;
+}
+
+hr{
+	background-color: #203773;
+	height: 0.08em; 
+}
+
+.preguntas{
+	padding: 0em 5.3em 0em 5.3em;
+}
+
+.encuesta{
+	padding: 4em 0em 2em 5.3em;
+}
+
+.encuestaparte1{
+	padding-bottom: 4em;
+}
+
+.encuestaparte1 .parteizq{
+	padding-top: 2em;
+}
+
+.encuestaparte1 .partederecha{
+	padding-top: 2em;
+}
+
+.encuesta .parteizq h3{
+	padding-top: 4em;
+}
+
+.encuesta .parteizq img{
+	width: 400px;
+	padding-top: 2em;
+	padding-bottom: 1.5em;
+}
+
+thead{
+	background-color: #203773;
+	color: #FFFFFA;
+	height: 2em;
+}
+
+thead th{
+	text-align: left;
+	font-size: 1.3em;
+	font-weight: normal;
+	padding: 0.5em 0em 0.5em 1em;
+}
+
+th.e {
+  width: 16em;
+}
+
+th.c {
+  width: 8em;
+}
+
+tbody td{
+	padding-left: 1.5em;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+
+.celeste{
+	background-color: #BDD3DF;
+}
+
+.encuestaparte2{
+	padding-top: 4em;
+}
+
+.encuestaparte2 .partederecha{
+	padding-top: 3em;
+	padding-bottom: 8em;
+}
+
+.encuestaparte2 .numero{
+	font-weight: bold;
+}
+
+
+footer{
+	margin-top: 2em;
+	width: 100%;
+	height: 12.5em;
+	background-color: #203773;
+	clear:both;
+}
+
+footer img{
+	float: left;
+    padding: 2em 0em 0em 0em;
+  	width: 105px;
+}
+
+.casa{
+	width: 20%;
+	padding: 0em;
+	padding-left: 5.3em;
+}
+
+.casa img{
+	float: left;
+  	width: 95px;
+}
+
+.footerizq{
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #F1F1F1;
+  font-size: 1em;
+  float: right;
+  font-weight: semi-bold;
+  padding: 4em 0em 0em 0em;
+  width: 35%;
+}
+
+.footerizq img{
+  float: left;
+  padding-top: 0em;
+  padding-left: 0em;
+  width: 45px;
+}
+
+.footerizq p{
+	padding-left: 4.5em;
+}
+
+.footerder{
+  float: right;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #F1F1F1;
+  font-size: 1em;
+  font-weight: semi-bold;
+  padding: 4em 0em 0em 0em;
+  width: 35%;
+}
+
+.footerder img{
+  float: left;
+  padding-top: 0em;
+  padding-left: 0em;
+  width: 50px;
+}
+
+.footerder p{
+	padding-left: 5em;
+}
+
+#formulario {
+	width: 100%;
+	display: block;
+}
+
+#formulario h3{
+	padding: 3em 0em 1em 4em;
+}
+
+fieldset{
+	border: 0em;
+	padding: 1em 0em 0em 5.3em;
+ 	width: 40%;
+  	float: left;
+}
+
+#formulario nav{
+	width: 40%;
+	float: right;
+	padding: 1em 5.3em 0em 0em;
+}
+
+button#consulta {
+ 	width: 100px;
+ 	background-color: #203773;
+ 	border-radius: 2px;
+ 	font-size: bold;
+ 	color: #F1F1F1; 
+ 	border-style: solid;
+  	border-color: #203773;
+  	height: 40px;
+  	margin-bottom: 2em;
+}
+
+button#consulta:hover{
+	background-color: #375795;
+	border-color: #375795;
+}
+
+.boton{
+	width: 40%;
+}
+
+#consulta{
+	float: left;
+}
+
+.mapa img {
+  	width: 100%;
+  	padding: 0em 5.3em 0em 0em;
+ }
+
+#formulario{
+	padding-bottom: 5em;
+}
+
+#formulario .partederecha{
+	padding-right: 0em;
+	padding-top: 2em;
+  	width: 46%; 
+  	display: block;
+}
+
+#formulario .partederecha .contacto{
+	padding-top: 2em;
+} 
+
+#formulario .partederecha img{
+	width: 8%;
+}
+
+#formulario .partederecha p{
+	width: 90%;
+ 	float: right;
+}
+
+label{
+	padding-left: 0em;
+}
+
+input{
+  	height: 2.3em;
+	width: 25em;
+	margin-bottom: 1.3em;
+ 	margin-top: 0.5em;
+	border-radius: 0.2em;
+	border-style: solid;
+  	border-color: #203773;
+  	border-width: 0.14em;
+}
+
+input#comment{
+	height: 20em;
+}
+
+.comment{
+  	height: 20em;
+	width: 25em;
+	margin-bottom: 1.3em;
+ 	margin-top: 0.5em;
+	border-radius: 0.2em;
+	border-style: solid;
+  	border-color: #203773;
+  	border-width: 0.14em;
+}
+
+@media screen and (max-width: 1200px) {
+
+	.partederecha{
+		padding-right: 3em;
+	}
+
+	.encuesta .partederecha{
+		width: 47%;
+	}
+
+	.encuesta .parteizq img{
+		width: 350px;
+	}
+
+
+	.encuestaparte2{
+		padding-top: 12em;
+	}
+
+	.encuestaparte2 .partederecha{
+		padding-top: 5em;
+		padding-bottom: 5em;
+	}
+
+	#formulario nav {
+  		width: 38%;
+ 	}
+
+ 	#formulario .partederecha{
+ 		padding-left: 2em;
+ 	}
+@media screen and (max-width: 1065px) {
+
+	.encuestaparte2{
+		padding-top: 15em;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	h2{
+		font-size: 1.7em;
+	}
+
+	h3{
+		font-size: 1em;
+	}
+
+	body{
+		font-size: 0.8em;
+	}
+
+
+	header nav img{
+		float: left;
+		width: 35px;
+		padding: 0.8em 0em 0em 3em;
+	}
+
+
+	.textoinstitucional img{
+		padding-bottom: 2em;
+	}
+
+	.casa{
+		width: 15%
+	}
+
+	.casa img{
+  		width: 65px;
+    }
+
+    thead th{
+    	font-size: 1em;
+	}
+
+	.encuesta .parteizq img{
+		width: 300px;
+	}
+
+	.encuestaparte2{
+		padding-top: 0em;
+	}
+
+	.encuestaparte2 .partederecha{
+		padding-top: 4em;
+		padding-bottom: 4em;
+	}
+
+	#formulario h3{
+		padding-left: 5.3em;
+	}
+
+	footer{
+		height: 10.5em;
+		font-size: 0.9em;
+	}
+
+    .footerizq{
+    	padding-top: 3.5em;
+    	width: 35%;
+    }
+
+	.footerizq img{
+		width: 34px;
+	}
+
+	.footerder{
+		padding-top: 3.5em;
+		width: 40%;
+	}
+
+	.footerder img{
+		width: 38px;
+	}
+
+@media screen and (max-width: 900px) {
+
+	.encuesta .parteizq img{
+		width: 250px;
+	}
+
+	.encuestaparte2 .parteizq h3{
+		padding-top: 0em;
+	}
+
+	.encuestaparte2{
+		padding-top: 16em;
+	}
+
+	.encuestaparte2 .partederecha{
+		padding-top: 0em;
+	}
+
+	.encuestaparte3 .parteizq{
+		padding-top: 4em;
+	}
+
+	.encuestaparte3 .parteizq h3{
+		padding-top: 3.8em;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	
+	.encuesta .partederecha{
+		width: 45%
+	}
+
+
+	#formulario .partederecha {
+  		padding-left: 1em;
+  		width: 40%;
+	}
+
+	#formulario nav{
+		width: 30%;
+	}
+
+@media screen and (max-width: 750px) {
+	.casa{
+		width: 10%
+	}
+
+	.casa img{
+  		width: 55px;
+    }
+
+    .encuestaparte2{
+		padding-top: 18em;
+	}
+
+	.encuesta .parteizq img{
+		width: 200px;
+	}
+
+	.encuestaparte3 .parteizq{
+		padding-top: 8em;
+	}
+
+    fieldset{
+ 		width: 35%;
+	}
+
+	#formulario nav{
+		width: 25%;
+	}
+	
+	#formulario .partederecha {
+		width: 29%;
+  		padding-right: 3em;
+	}
+
+	#formulario .partederecha .contacto{
+		padding-top: 4em;
+	} 
+
+	footer{
+		font-size: 0.8em;	
+	}
+
+@media screen and (max-width: 650px) {
+
+
+	header nav{
+		width: 80%;
+		height: 100%;
+		margin: 0;
+		right: -100%;
+		position: fixed;
+	}
+
+	header nav img {
+  		float: left;
+ 		width: 40px;
+ 		padding: 15px 0px 15px 35px;
+	}
+	
+	header nav ul li{
+		display: block;
+		float: none;
+		border-bottom: 1px solid rgba(225,225,255, .3);
+
+	}
+
+	header .marcagrande img{
+		display: none;
+	}
+
+	header{
+		position: fixed;
+		z-index:100; 
+	}
+
+	.menu_bar{
+		display: block;
+		width: 100%;		
+		background: #ccc;
+	}
+
+	.menu_bar .bt-menu{
+		display: block;
+  		padding: 10px 20px 15px;
+  		background: #203773;
+		color: #fff;
+		font-color: #203773;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 25px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		right: 0px;
+		width: 100%;
+		height:60px;
+	}
+
+	.menu_bar span{
+		float: right;
+		font-size: 40px;
+	}
+
+	.desplegable{
+		width: 70%;
+		height: 289px;
+		margin-top: 30px;
+	}
+
+	header nav ul{
+		width: 100%;
+	}
+
+	.desplegable img{
+		 width: 40px;
+		 float: left;
+		 padding: 15px 0px 0px 35px;
+	}
+	.casa img{
+  		width: 90px;
+  		padding-left: 1em;
+    }
+
+    .descripcion{
+		padding: 1em 0em 3em 0em;
+	}
+
+	.descripcion h3{
+		width: 95%;
+	}
+
+    #preguntas .parteizq{
+		padding-bottom: 0em;
+	}
+
+    .textoinstitucional {
+  		padding: 8em 0em 0em 5.3em;
+	}
+
+    .textoinstitucional img {
+		padding-bottom: 2em;
+		width: 100%;
+	}
+
+	.valores {
+  		padding: 0em 0em 2em 5.3em;
+	}
+
+    .parteizq{
+		width: 90%;
+		float: none;
+	}
+
+	.valores .parteizq .obj{
+		padding-bottom: 0em;
+	}
+
+	.valores .partederecha{
+		padding-bottom: 0em;
+	}
+
+	.partederecha{
+		width: 90%;
+		float: none;
+	}
+
+	.barriouno{
+		padding-top: 6em;
+	}
+
+	.barriodos{
+		padding-top: 0em;
+	}
+
+	.barriolonja{
+		padding-top: 0em;
+	}
+
+	.barriolonja .parteizq{
+		padding-bottom: 2em;
+	}
+
+	.encuesta{
+		padding-top: 6em;
+	}
+
+	.encuesta .partederecha{
+		width: 90%
+	}
+
+	.encuesta .parteizq h3{
+		padding-top: 1em;
+	}
+
+	.encuestaparte1 {
+		padding-bottom: 0em;
+	}
+
+	.encuestaparte2{
+		padding-top: 0em;
+	}
+
+	.encuestaparte2 .partederecha{
+		padding-top: 1em;
+		padding-bottom: 0em;
+	}
+
+	.encuesta .parteizq img{
+		width: 200px;
+	}
+
+	.encuestaparte3 .parteizq{
+		padding-top: 2em;
+	}
+
+
+	#formulario{
+		padding-top: 4em;
+	}
+
+	#formulario nav{
+		width: 100%;
+		float: left;
+	}
+
+	#formulario nav img{
+		width: 80%;
+		padding-left: 5.3em;
+	}
+	
+	#formulario .partederecha {
+  		float: left;
+  		width: 100%;
+  		padding-left: 5.3em;
+  		padding-right: 0em;
+	}
+
+	#formulario h3 {
+  		padding: 3em 0em 1em 5em;
+  	}
+
+	button#consulta {
+ 		width: 80px;
+  		height: 25px;
+	}
+
+	#formulario .partederecha .place p{
+		padding-top: 1em;
+	} 
+
+	#formulario .partederecha .contacto{
+		padding-top: 2em;
+	}
+
+	footer{
+  		padding-left: 6em;
+  		padding-top: 2em;
+  		height: 22em;
+  		font-size: 0.7em;
+  		margin-top: 0em;
+	}
+
+	.casa{
+		padding-left: 1em;
+	}
+
+	.casa img{
+		width: 40px;
+		padding-top: 0em;
+	}
+
+	.footerizq p{
+		padding-left: 6em;
+		padding-top: 0em;
+	}
+
+	.footerizq{
+		padding-top: 2.5em;
+    	width: 100%;
+    }
+
+    .footerizq img{
+        padding-left: 1.5em;
+        width: 25px;
+    }
+
+    .footerder p{
+		padding-left: 6em;
+		padding-top: 0em;
+	}
+
+	.footerder{
+		padding-top: 2.5em;
+		width: 100%;
+		padding-bottom: 2em;
+	}
+
+	.footerder img{
+		padding-left: 1.5em;
+		width: 25px;
+	}
+
+
+@media screen and (max-width: 450px) {
+
+	.descripcion{
+ 		padding: 0.5em 0em 2em 0em;
+ 	}
+
+ 	.descripcion h3 {
+  		width: 80%;
+  		padding-left: 2.5em;
+  	}
+
+	
+@media screen and (max-width: 400px) {
+
+	.marcagrande img {
+	 	 width: 60%;
+ 		 padding: 3em 5.3em 2em 2em;
+ 	}
+
+ 	#preguntas{
+  		padding: 2em  0em 0em 2em;
+  	}
+
+ 	.textoinstitucional{
+ 		padding-left: 2em;
+ 	}
+
+ 	.valores{
+ 		padding: 0em 0em 1em 2em;
+ 	}
+
+	.barriouno {
+		padding: 1em 0em 0em 2em;
+	}
+
+	.barriodos{
+		padding: 1em 0em 0em 2em;
+	}
+
+ 	.barriolonja{
+		padding: 1em 0em 0em 2em; 		
+ 	}
+
+ 	.encuesta{
+ 		padding: 4em  0em 0em 2em;
+ 	}
+
+ 	fieldset{
+ 		padding-left: 3em;
+ 		padding-right: 0em;
+ 		width: 80%
+ 	}
+
+ 	input{
+ 		width: 230px;
+ 	}
+
+ 	.comment{
+ 		width: 230px;
+ 	}
+
+ 	#formulario nav{
+		width: 87%;
+		float: left;
+	}
+
+	#formulario nav img{
+		width: 75%;
+		padding-left: 3em;
+	}
+
+	#formulario .partederecha {
+  		float: left;
+  		width: 65%;
+  		padding-left: 3em;
+	}
+
+	#formulario .partederecha .place p{
+		padding-top: 0em;
+	} 
+
+	#formulario .partederecha .contacto{
+		padding-top: 4em;
+	}
+
+	#formulario h3 {
+  		padding: 3em 0em 1em 3em;
+  	}
+
+	footer{
+  		padding-left: 2em;
+	}
+
+	
+	@media screen and (max-width: 300px) {
+
+	#formulario h3 {
+  		padding: 2em 0em 1em 3em;
+  	}
+	 
+	input{
+ 		width: 190px;
+ 	}
+
+ 	.comment{
+ 		width: 190px;
+ 	}
+
+	.menu_bar .bt-menu{
+		height: 40px;
+	}
+
+	span.icon-menu {
+  		line-height: 0.05;
+  		padding-top: 7px;
+	}
+
+	.desplegable{
+		height: 175px;
+		margin-top:18px; 
+	}
+
+	.desplegable img{
+		 width: 27px;
+		 padding: 5px 0px 5px 27px;
+	}
+
+	header nav ul li a{
+		  padding: 0.8em 1em 0.8em 1em;
+	}
+
+	.encuesta .parteizq img{
+		width: 200px;
+	}
+
+	footer{
+  		padding-bottom: 3em;
+	}
+
+	h2{
+		font-size: 1.3em;
+	}
+
+	h3{
+		font-size: 1em;
+	}
+
+	body{
+		font-size: 0.6em;
+	}
+
+	input{
+ 		width: 180px;
+ 	}
+
+ 	.comment{
+ 		width: 180px;
+ 	}
+
+
+
+
+
+	
+
+	

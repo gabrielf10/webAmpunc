@@ -1,0 +1,85 @@
+	{% extends 'base.html' %}
+	{% block titulo %} Encuesta{% endblock %}
+	{% block contenido %}
+
+	<section class="encuesta">
+		<section class="encuestaparte1">
+			<h2>Encuesta Habitacional</h2>
+			<hr>
+			<div class="parteizq">
+				<p>La Asociación Mutual del Personal de la Universidad Nacional de Cuyo realizó una encuesta habitacional entre los meses julio a octubre de 2013 en 	la Facultad de Ciencias Agrarias y Dependencias de la Universidad Nacional de Cuyo ubicadas en Parque General San Martín. <br><br>
+				El Procedimiento consistió en realizarlas durante 2 (dos) días por cada dependencia y 20 días en Obra Social  D.A.M.S.U. El resultado se muestra en el 	cuadro y en el gráfico  siguientes:</p>
+			</div>
+			<div class="partederecha">
+				<table>
+					<thead>
+						<tr>
+            				<th class="e">Encuestados</th>
+            				<th class="c">Cantidad</th>
+        				</tr>
+					</thead>
+					<tbody>
+       					<tr>
+            				<td>Empleados de la UNCuyo</td>
+           					<td>786</td>
+        				</tr>
+        				<tr class="celeste">
+            				<td>Adherentes</td>
+           					<td>298</td>
+        				</tr>
+        				<tr>
+            				<td>No responde</td>
+           					<td>188</td>
+        				</tr>
+        				<tr class="celeste">
+            				<td>Total personas encuestadas</td>
+           					<td>1272</td>
+        				</tr>
+    				</tbody>
+				</table>
+			</div>		
+		</section>	
+
+		<section class="encuestaparte2">
+			<div class="parteizq">
+				<h3>Encuesta Habitacional en la UNCuyo <br> período: julio a setiembre de 2013.</h3>
+				<img src="/img/grafico1.png">
+			</div>
+			<div class="partederecha">
+				<p class="numero">1272</p> <p>Es el total de los encuestados.</p> <br>
+				<p class="numero">1084</p> <p> Son las personas que requieren <br>solución habitacional(77%).<br>
+				Sin necesidad de vivienda. </p> <br>
+				<p class="numero">188 </p> <p>Personas que son propietarios<br> o no respondieron la Encuesta. </p> <br>
+				<p class="numero">298 </p> <p>Registrados en la categoría adherentes<br> (incluye jubilados, familiares. </p> <br>
+				<p class="numero">786 </p> <p>Son todos los empleados que tienen<br> bono de sueldo  de la UNCUYO<br>
+				Con necesidad de viviendade empleados,<br> alumnos y egresados de la UNCUYO).</p>
+			</div>
+			
+		</section>
+
+		<section class="encuestaparte3">
+			<div class="parteizq">
+				<h3>Este gráfico refleja la proporcionalidad del total de la planta laboral de la Universidad entre 
+				empleados docentes y personal de apoyo.</h3>
+				<img src="/img/grafico2.png">
+			</div>
+			<div class="partederecha">
+					<h3>Conclusión</h3>
+					<p>En base a estos antecedentes, en la actualidad la Mutual se encuentra abocada a  
+					identificar al grupo con particularidades afines.<br><br> Se está trabajando para lograr que los 
+					futuros propietarios sean empleados de la UNCUYO. Como el Estatuto de la Mutual 
+					permite la incorporación de personas que no son empleados de la Universidad, en ese 
+					caso se incorporan como socios adherentes, A.M.P.U.N.C. aún no ha podido revertir la 
+					tendencia de mayor cantidad de socios adherentes. Este es un hecho que preocupa ya 
+					que esta MUTUAL fue creada para ofrecer sus prestaciones a empleados de la 
+					Universidad esencialmente.<br><br> Por este motivo justamente se realizó la encuesta 
+					habitacional en dependencias universitarias, a fin de dar a conocer su existencia con el 
+					afán de incorporar nuevos asociados empleados universitarios.<br><br>
+					*Dato Estadístico Asociación  Mutual del Personal de la UNCUYO, octubre 2013. </p>
+			</div>
+
+		</section>
+	</section>
+
+
+{% endblock %}

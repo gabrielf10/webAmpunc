@@ -1,0 +1,73 @@
+	{% extends 'base.html' %}
+	{% block titulo %} Inicio{% endblock %}
+	{% block contenido %}
+	{% load staticfiles %}
+		<span class="ir-arriba icon-chevron-up"></span>
+		<!-- SLIDE -->
+		<div class="main">
+			<div class="slides">	
+				{% for imagen in imagenes %}
+		   		<img src="{{ MEDIA_URL }}/media/{{ imagen.url }}">
+				{% endfor %}				
+			</div>
+		</div>
+		<!-- FIN SLIDE -->
+		
+		<div class="descripcion" >
+			<h1>AMPUNC</h1> <h3> Asociación Mutual del Personal de la Universidad Nacional de Cuyo. <br> Somos una empresa destinada a la construcción de viviendas propias<br> pensadas para los Empleados de la UNCuyo. </h3>
+		</div>
+
+	<section id="preguntas">
+		<h2>Preguntas Frecuentes</h2>
+			<hr>
+			<br>
+		<div class="parteizq" >
+			<h4>1. Tengo que ser empleado de la Universidad?</h4>
+			<p>Se admiten personas que no trabajan en la UNCUYO pero esencialmente está dirigido para empleados universitarios.</p><br> 
+			<h4>2. Cuáles son los requisitos para ingresar al proyecto?</h4>
+			<p>Asociarse a la Entidad e incorporarse a alguno de los proyectos en curso.</p><br>
+			<h4>3. ¿El proyecto es para viviendas IPV.?</h4>
+			<p>Se busca alcanzar el crédito hipotecario que otorga primariamente el Estado.</p><br>
+			<h4>4. ¿Puede ser privado?</h4>
+			<p>Sí, en menor medida se destinan lotes para este requerimiento.</p><br>
+			<h4>5. ¿Se puede usar el crédito Pro.Cre.Ar. en los terrenos del proyecto?</h4>
+			<p>No en primera instancia ya que son proyectos de conjunto que cumplen etapas de concreción (adquisición de terreno, urbanización, construcción).</p><br>
+			<h4>6. ¿Al ingresar al proyecto adquiero la escritura del terreno?</h4>
+			<p>Para fraccionar lotes y escriturar es necesario tener todo el loteo urbanizado y cancelado.</p><br>
+		</div>
+		<div class="partederecha">
+			
+			<h4>7. ¿Cuáles son los tiempos para urbanizar los terrenos?</h4>
+			<p>Depende de la capacidad de pago del grupo de socios. Esta propuesta se analiza, se expone al comienzo y se evalúa durante todo el proceso mediante asamblea de asociados. </p><br>
+			<h4>8. ¿Se puede cambiar de proyecto privado a estatal o viceversa?</h4>
+			<p>Sí, en la medida que exista la posibilidad.</p><br>
+			<h4>9. ¿Cómo se elige la ubicación del lote?</h4>
+			<p>Por elección de lotes libres con prioridad de ingreso  o puede ser por sorteo. Lo resuelve la Comisión Directiva.</p><br>
+			<h4>10. ¿La Comisión Directiva de la Mutual está compuesta por empleados universitarios?</h4>
+			<p>Todos los miembros que componen la Comisión Directiva son empleados de la Universidad Nacional de Cuyo, requisito establecido en el Estatuto de la Entidad.</p><br>
+		</div>
+	</section>
+	<script>
+		$(function(){
+		  $(".slides").slidesjs({
+		    play: {
+		      active: false,
+		        // [boolean] Generate the play and stop buttons.
+		        // You cannot use your own buttons. Sorry.
+		      effect: "slide",
+		        // [string] Can be either "slide" or "fade".
+		      interval: 4000,
+		        // [number] Time spent on each slide in milliseconds.
+		      auto: true,
+		        // [boolean] Start playing the slideshow on load.
+		      swap: true,
+		        // [boolean] show/hide stop and play buttons
+		      pauseOnHover: false,
+		        // [boolean] pause a playing slideshow on hover
+		      restartDelay: 2500
+		        // [number] restart delay on inactive slideshow
+		    }
+		  });
+		});
+	</script>
+	{% endblock %}
