@@ -28,6 +28,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = (
+    ('Gabriel', 'gabrielfprog@gmail.com'),   # email will be sent to your_email
+)
+
+MANAGERS = ADMINS
+
 
 # Application definition
 
@@ -40,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'administrador',
     'imagekit',
+    'contact_form',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -107,8 +114,8 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-
-EMAIL_HOST = ""
-EMAIL_PORT = ""
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "gabrielfprog@gmail.com"
+EMAIL_HOST_PASSWORD = "4481199gg"

@@ -448,7 +448,7 @@ fieldset{
 	padding: 1em 5.3em 0em 0em;
 }
 
-button#consulta {
+#consulta {
  	width: 100px;
  	background-color: #203773;
  	border-radius: 2px;
@@ -460,7 +460,7 @@ button#consulta {
   	margin-bottom: 2em;
 }
 
-button#consulta:hover{
+#consulta:hover{
 	background-color: #375795;
 	border-color: #375795;
 }
@@ -905,7 +905,9 @@ input#comment{
 	.encuestaparte3 .parteizq{
 		padding-top: 2em;
 	}
-
+	.contact-sent{
+		padding: 3em 0em 1em 5em;
+	}	
 
 	#formulario{
 		padding-top: 4em;
@@ -932,7 +934,7 @@ input#comment{
   		padding: 3em 0em 1em 5em;
   	}
 
-	button#consulta {
+	#consulta {
  		width: 80px;
   		height: 25px;
 	}

@@ -1,0 +1,7 @@
+Hola,
+
+Has recibido una consulta.
+
+Nombre y Apellido: {{ name }}
+Email: {{ email }}
+Consulta: {{ body }}

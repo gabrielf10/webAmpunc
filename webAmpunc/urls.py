@@ -28,7 +28,7 @@ admin.site.index_title = u'Panel de Control AMPUNC'
 
 urlpatterns = [
     url(r'^$','administrador.views.inicio'),
-    url(r'^contacto/$', 'administrador.views.contacto'),
+    url(r'^contacto/', include('contact_form.urls')),
     url(r'^institucional/$', 'administrador.views.institucional'),
     url(r'^proyectos/$', 'administrador.views.proyectos'),
     url(r'^encuesta/$', 'administrador.views.encuesta'),
