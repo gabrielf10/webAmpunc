@@ -35,7 +35,8 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
     url(r'^admin/', include(admin.site.urls)),
-
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    
     url(r'^js/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'js')}),
     url(r'^css/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'css')}),
     url(r'^img/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'img')}),

@@ -12,10 +12,10 @@
  	<img src="{{ MEDIA_URL }}/media/{{ proyecto.url }}">
  	<h3>{{ proyecto.subtitulo}}</h3><br>
  	<div class="parteizq">
- 		<p>{{ proyecto.descripcion_izq}}</p>
+ 		<p>{{ proyecto.descripcion_izq|safe}}</p>
  	</div>
  	<div class="partederecha">
- 		<p>{{ proyecto.descripcion_der}}</p>
+ 		<p>{{ proyecto.descripcion_der|safe}}</p>
  	</div>
  	</section>
  	{% endfor %}
