@@ -26,3 +26,9 @@ def institucional(request):
 
 def contacto(request):
 	return render_to_response('contacto.html', RequestContext(request))
+
+def handler404(request):
+    return render_to_response('404.html') 
+
+def handler500(request):
+    return render_to_response('500.html') 

@@ -24,9 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'g7z#2#1ah3a$x1&-0)#5o%#87(6%w!#w)8_af5-0k%boq-z7^z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['http://ampunc.org.ar/','www.ampunc.org.ar','ampunc.org.ar','http://www.ampunc.org.ar']
+
 
 ADMINS = (
     ('AMPUNC', 'ampuncmutual@gmail.com'),   # email will be sent to your_email
@@ -48,6 +50,7 @@ INSTALLED_APPS = (
     'imagekit',
     'contact_form',
     'ckeditor',
+    'favicon',
 
 )
 
@@ -145,9 +148,10 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
+FAVICON_PATH = STATIC_URL + 'ico/favicon.ico'
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 EMAIL_USE_TLS = True

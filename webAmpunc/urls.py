@@ -26,7 +26,9 @@ admin.site.site_title = u'Adiministración Sitio Web AMPUNC'
 admin.site.site_header = u'Adiministración Sitio Web AMPUNC'
 admin.site.index_title = u'Panel de Control AMPUNC'
 
+
 urlpatterns = [
+    url(r'^', include('favicon.urls')),
     url(r'^$','administrador.views.inicio'),
     url(r'^contacto/', include('contact_form.urls')),
     url(r'^institucional/$', 'administrador.views.institucional'),
@@ -41,3 +43,7 @@ urlpatterns = [
     url(r'^css/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'css')}),
     url(r'^img/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'img')}),
 ]
+
+
+handler404 = 'administrador.views.handler404'
+handler500 = 'administrador.views.handler500'
