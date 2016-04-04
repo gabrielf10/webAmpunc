@@ -10,9 +10,14 @@ body {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 }
+
 /* AGREGADO GABRIEL 
    slide principal*/
-
+footer a {
+  background: transparent;
+  text-decoration: none;
+  color: #FFF;
+}
    .main{
    	width: 100%;
    	margin: 2px auto;
@@ -30,7 +35,7 @@ body {
   
    }
    .slidesjs-container{
-   	height: 245px !important;
+   	height: 535px !important;
    }
    .slidesjs-pagination {
    	background: #203773;
@@ -84,7 +89,7 @@ h1{
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 2.3em;
-	color: #203773;
+	color: #203773;	
 }
 
 h2{
@@ -106,6 +111,12 @@ h4{
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 1em;
+}
+h5{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 0.75em;
+	color: #FFF;
 }
 
 header {
@@ -801,7 +812,17 @@ input#comment{
 	
 
 	}	
-
+	.slidesjs-container{
+   	height: 135px !important;
+    }
+	.slidesjs-navigation {
+   		background:  #203773;
+   		color: #fff;
+   		text-decoration: none;
+   		display: inline-block;
+   		padding: 5px 20px;
+   		float: right;
+   	}
 
 	header nav{
 		width: 80%;
@@ -1083,6 +1104,10 @@ input#comment{
 	
 
 	}	
+		.slidesjs-container{
+   	height: 135px !important;
+   }
+
 
 	.descripcion{
  		padding: 0.5em 0em 2em 0em;
@@ -1110,7 +1135,9 @@ input#comment{
 	
 
 	}	
-
+	.slidesjs-container{
+   	height: 135px !important;
+   }
 	.marcagrande img {
 	 	 width: 60%;
  		 padding: 3em 5.3em 2em 2em;
@@ -1207,6 +1234,9 @@ input#comment{
 	
 
 	}	
+	.slidesjs-container{
+   	height: 135px !important;
+   }
 
 	#formulario h3 {
   		padding: 2em 0em 1em 3em;

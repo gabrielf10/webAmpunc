@@ -5,19 +5,16 @@
   		<h3>Escribe tu Consulta!</h3>
 	 	 <form method="post">{% csrf_token %}   
 		<fieldset>
-	            <label for="name">Nombre:</label>
+	            
+	            <input id="name" name="name" type="text" placeholder=" Nombre" required>
 	            <br>
-	            <input id="name" name="name" type="text" required>
-	            <br>
-
-	            <label for="email">Email:</label>
-	             <br>
-	       		<input id="user-mail" name="email" type="email" required>
+	            
+	       		<input id="user-mail" name="email" type="email" placeholder=" Email" required>
 	       		<br>       		
 
 	            <label for="comment">Tu consulta:</label>
 	            <br>				
-	       	    <textarea class="comment" name="body" rows="15">	       	    	
+	       	    <textarea placeholder="ESCRIBE TU CONSULTA" class="comment" name="body" rows="15" >	       	    	
 	       	    </textarea>
 	       	    <br>
 	       		
@@ -38,8 +35,7 @@
 				</div>
 				<div class="contacto">
 				<img src="/img/contactenosazul.png" />
-				<p><a class="telefono" href="tel://4455927">Tel: (261) 4455927</a>
-	        	<br><a href="facebook.com/MUTUALAMPUNC ">facebook.com/MUTUALAMPUNC</a><br> mutual_ampunc@yahoo.com.ar</p>
+				<p><a class="telefono icon-phone" href="tel://4455927"> Tel: (261) 4455927</a><br><a class="icon-facebook2" href="https://www.facebook.com/MUTUALAMPUNC" target="_blank"> facebook.com/MUTUALAMPUNC</a><br> <a href="mailto:mutual_ampunc@yahoo.com.ar" class="icon-mail" > mutual_ampunc@yahoo.com.ar</a></p>
 	        	</div>
 			</div>
 			<div class="parteizq">
@@ -52,3 +48,5 @@
 	{% endblock %}
 
 	<!-- user-mail y comment-->
+
+	
