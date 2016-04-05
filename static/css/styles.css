@@ -10,9 +10,14 @@ body {
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-size: 1em;
 }
+
 /* AGREGADO GABRIEL 
    slide principal*/
-
+footer a {
+  background: transparent;
+  text-decoration: none;
+  color: #FFF;
+}
    .main{
    	width: 100%;
    	margin: 2px auto;
@@ -30,7 +35,7 @@ body {
   
    }
    .slidesjs-container{
-   	height: 245px !important;
+   	height: 535px !important;
    }
    .slidesjs-pagination {
    	background: #203773;
@@ -62,7 +67,7 @@ body {
    		color: #fff;
    		text-decoration: none;
    		display: inline-block;
-   		padding: 5px 20px;
+   		padding: 6px 20px;
    		float: right;
    	}
    	.ir-arriba {
@@ -84,7 +89,7 @@ h1{
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 2.3em;
-	color: #203773;
+	color: #203773;	
 }
 
 h2{
@@ -106,6 +111,12 @@ h4{
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 1em;
+}
+h5{
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 0.75em;
+	color: #FFF;
 }
 
 header {
@@ -178,7 +189,10 @@ header nav ul li:hover {
 .descripcion h3{
 	color: #FFFFFA;
 }
+.valores .partederecha img{
+	width: 100%;
 
+}
 #preguntas{
 	padding: 5em 0em 0em 5.3em;
 }
@@ -203,7 +217,7 @@ header nav ul li:hover {
 }
 
 .valores{
-	padding: 3em 0em 2em 5.3em;
+	padding: 1em 0em 2em 5.3em;
 }
 
 .valores .parteizq{
@@ -223,7 +237,15 @@ header nav ul li:hover {
 .valores .partederecha{
 	padding-bottom: 2em;
 }
-
+.content-video iframe{
+	width: 100%;
+	margin: 3em 0px 3em 0px;
+	height: 650px;
+}
+.content-video{
+	padding-top: 3em;
+	padding-left: 5.3em;
+}
 .barrios{
 	display: block;
 }
@@ -267,16 +289,42 @@ header nav ul li:hover {
 }
 
 .parteizq{
-	width: 45%;
-	float: left;
+	width: 45%;	
 	text-align: justify;
+	float: left;
 }
+.parteizquierda{
+	width: 45%;	
+	text-align: justify;
+	
+}
+.textoinstitucional #imagen_der{
+	width: 100%;
+	padding: 2.5em 0px;
+}
+.chimp{
 
+	text-align: center;
+
+}
+.chimp .mailchimp{
+	display: inline-block;
+	margin: 0px 0px 0px 5em;	
+	width: 40%;
+	text-align: center;
+	border: 4px solid #7A7A7A; 
+	text-shadow: 3px 3px 2px #FFF;
+	border-radius: 0.5em;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+	margin-top: 2em;
+
+}
 .partederecha{
 	width: 45%;
 	float: right;
 	padding-right: 5.3em;
 	padding-bottom: 2em;
+	
 }
 
 hr{
@@ -692,6 +740,21 @@ input#comment{
 	}
 
 @media screen and (max-width: 750px) {
+		.content-video {
+		padding-top: 5em;
+	}
+	.content-video iframe{
+	height: 150px;
+	padding-top: 2em;
+	}
+	.chimp {
+	padding-right: 6em;
+	}
+	.chimp .mailchimp{	
+	width: 100%;
+	
+
+	}	
 	.casa{
 		width: 10%
 	}
@@ -734,7 +797,32 @@ input#comment{
 	}
 
 @media screen and (max-width: 650px) {
+		.content-video {
+		padding-top: 5em;
+	}
+	.content-video iframe{
+	height: 150px;
+	padding-top: 2em;
+	}
+	.chimp {
+	padding-right: 6em;
+	}
+	.chimp .mailchimp{	
+	width: 100%;
+	
 
+	}	
+	.slidesjs-container{
+   	height: 135px !important;
+    }
+	.slidesjs-navigation {
+   		background:  #203773;
+   		color: #fff;
+   		text-decoration: none;
+   		display: inline-block;
+   		padding: 5px 20px;
+   		float: right;
+   	}
 
 	header nav{
 		width: 80%;
@@ -829,6 +917,9 @@ input#comment{
     .textoinstitucional {
   		padding: 8em 0em 0em 5.3em;
 	}
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+		/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+		   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 
     .textoinstitucional img {
 		padding-bottom: 2em;
@@ -847,6 +938,7 @@ input#comment{
 	.valores .parteizq .obj{
 		padding-bottom: 0em;
 	}
+	
 
 	.valores .partederecha{
 		padding-bottom: 0em;
@@ -997,6 +1089,25 @@ input#comment{
 
 
 @media screen and (max-width: 450px) {
+	.content-video {
+		padding-top: 5em;
+	}
+	.content-video iframe{
+	height: 150px;
+	padding-top: 2em;
+	}
+	.chimp {
+	padding-right: 6em;
+	}
+	.chimp .mailchimp{	
+	width: 100%;
+	
+
+	}	
+		.slidesjs-container{
+   	height: 135px !important;
+   }
+
 
 	.descripcion{
  		padding: 0.5em 0em 2em 0em;
@@ -1009,7 +1120,24 @@ input#comment{
 
 	
 @media screen and (max-width: 400px) {
+	.content-video {
+		padding-top: 5em;
+	}
+	.content-video iframe{
+	height: 150px;
+	padding-top: 2em;
+	}
+	.chimp {
+	padding-right: 6em;
+	}
+	.chimp .mailchimp{	
+	width: 100%;
+	
 
+	}	
+	.slidesjs-container{
+   	height: 135px !important;
+   }
 	.marcagrande img {
 	 	 width: 60%;
  		 padding: 3em 5.3em 2em 2em;
@@ -1091,6 +1219,24 @@ input#comment{
 
 	
 	@media screen and (max-width: 300px) {
+	.content-video {
+		padding-top: 5em;
+	}
+	.content-video iframe{
+	height: 150px;
+	padding-top: 2em;
+	}
+	.chimp {
+	padding-right: 6em;
+	}
+	.chimp .mailchimp{	
+	width: 100%;
+	
+
+	}	
+	.slidesjs-container{
+   	height: 135px !important;
+   }
 
 	#formulario h3 {
   		padding: 2em 0em 1em 3em;

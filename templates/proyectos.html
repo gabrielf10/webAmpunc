@@ -4,21 +4,63 @@
 	{% load staticfiles %}
 	<span class="ir-arriba icon-chevron-up"></span>
 	
- 	
+ 	<section class="content-video">
+ 		<h2>Entrevista al Presidente de AMPUNC en "Hecho en Mendoza" </h2>
+ 		<hr>
+ 		<iframe src="https://www.youtube.com/embed/C63_qTsKFlE?autoplay=1" frameborder="0" allowfullscreen></iframe>
+ 	</section>
  	{% for proyecto in proyectos %}
  	<section class="barrio">
  	<h2>{{ proyecto.titulo }}</h2>
  	<hr>
- 	<img src="{{ MEDIA_URL }}/media/{{ proyecto.url }}">
  	<h3>{{ proyecto.subtitulo}}</h3><br>
+ 	<img src="{{ MEDIA_URL }}/media/{{ proyecto.url }}">
  	<div class="parteizq">
- 		<p>{{ proyecto.descripcion_izq}}</p>
+ 		<p>{{ proyecto.descripcion_izq|safe}}</p>
  	</div>
  	<div class="partederecha">
- 		<p>{{ proyecto.descripcion_der}}</p>
+ 		<p>{{ proyecto.descripcion_der|safe}}</p>
  	</div>
  	</section>
  	{% endfor %}
+ 	<br>
+ 	<section class="chimp">
+ 	<hr>
+ 	<div class="mailchimp">	
+ 		<h1>Suscribete</h1>
+ 		<p>Completa el formulario si estas interesado en recibir información sobre nuestros proyectos</p>
+ 		<!-- Begin MailChimp Signup Form -->
+	<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+	
+	<div id="mc_embed_signup">
+	<form action="//ampunc.us12.list-manage.com/subscribe/post?u=cf68a22341d61707ff5079b04&amp;id=645bf3ac7f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	    <div id="mc_embed_signup_scroll">	
+	<div class="indicates-required"><span class="asterisk">*</span> campo requerido</div>
+	<div class="mc-field-group">
+		<label for="mce-EMAIL">Email  <span class="asterisk">*</span>
+	</label>
+		<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	</div>
+	<div class="mc-field-group">
+		<label for="mce-MMERGE2">Nombre <span class="asterisk">*</span>
+	</label>
+		<input type="text" value="" name="MMERGE2" class="required name" " id="mce-MMERGE2">
+	</div>
+		<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+	    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cf68a22341d61707ff5079b04_645bf3ac7f" tabindex="-1" value=""></div>
+	    <div class="clear"><input type="submit" value="Suscribirse" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+	    </div>
+	</form>
+</div>
+
+</div>
+<!--End mc_embed_signup-->
+
+ 	
+ 	</section>
 
 	
 {% endblock %}

@@ -26,7 +26,9 @@ SECRET_KEY = 'g7z#2#1ah3a$x1&-0)#5o%#87(6%w!#w)8_af5-0k%boq-z7^z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['http://ampunc.org.ar/','www.ampunc.org.ar','ampunc.org.ar','http://www.ampunc.org.ar']
+
 
 ADMINS = (
     ('AMPUNC', 'ampuncmutual@gmail.com'),   # email will be sent to your_email
@@ -47,6 +49,9 @@ INSTALLED_APPS = (
     'administrador',
     'imagekit',
     'contact_form',
+    'ckeditor',
+    'favicon',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,9 +114,44 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_BROWSE_SHOW_DIRS = False
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'editor_personalizado': {
+        'toolbar': [
+            ['Undo', 'Redo',
+             '-', 'Bold', 'Italic', 'Underline',
+             '-', 'Link', 'Unlink', 'Anchor',
+             '-', 'Styles', 'Format',
+             '-', 'TextColor', 'BGColor',
+             '-', 'SpellChecker', 'Scayt',
+             '-', 'Maximize',
+             ],
+            ['HorizontalRule',
+             '-', 'Image', 'Iframe', 'Flash', 'Table', 
+             '-', 'BulletedList', 'NumberedList',
+             '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+             '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord',
+             '-', 'SpecialChar',
+             '-', 'Source',
+             ]
+        ],
+        'language': 'es',
+        'scayt_sLang': 'es_ES',
+        'wsc_lang': 'es_ES',
+        'extraAllowedContent': 'iframe[src,width,height,frameborder,style]',
+        'width': '100%',
+    },
+}
+
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
+FAVICON_PATH = STATIC_URL + 'ico/favicon.ico'
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 EMAIL_USE_TLS = True

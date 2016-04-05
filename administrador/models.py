@@ -3,6 +3,8 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from imagekit.processors import ResizeToFit
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -19,8 +21,10 @@ class Proyecto(models.Model):
 							format='JPEG',
 							options={'quality':80})
 	subtitulo = models.CharField(max_length=200)
-	descripcion_izq = models.TextField(verbose_name = 'Descripcion Izquierda')
-	descripcion_der = models.TextField(verbose_name = 'Descripcion Derecha')
+
+	descripcion_izq = RichTextUploadingField(config_name='editor_personalizado',verbose_name='Descripción Izquierda')
+	
+	descripcion_der = RichTextUploadingField(config_name='editor_personalizado',verbose_name='Descripción Derecha')
 
 	def __unicode__(self):
 		return self.titulo
