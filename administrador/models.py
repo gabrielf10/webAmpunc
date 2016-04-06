@@ -14,7 +14,7 @@ class Proyecto(models.Model):
 	imagen = ImageSpecField(source='url',
 							processors=[ResizeToFit(700,700)],
 							format='JPEG',
-							options={'quality':80})
+							options={'quality':100})
 	
 	imagen_miniatura = ImageSpecField(source='url',
 							processors=[ResizeToFill(50,50)],
@@ -37,9 +37,9 @@ class ImagenesSlide(models.Model):
 	descripcion = models.TextField()
 	url = models.ImageField(upload_to='img', verbose_name='Imágen')
 	imagen = ImageSpecField(source='url',
-							processors=[ResizeToFit(1600,500)],
+							processors=[ResizeToFit(1000,400)],
 							format='JPEG',
-							options={'quality':80})
+							options={'quality':100})
 	
 	imagen_miniatura = ImageSpecField(source='url',
 							processors=[ResizeToFill(100,50)],
