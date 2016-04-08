@@ -63,9 +63,59 @@ body {
    }
    .slides img{
    	width: 100%;
-  	
-  
+   	position: relative;
+
+
+
    }
+
+   .slides .mascara{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	}
+
+	
+	.slides .mascara h2 {
+	text-transform: capitalize;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	font-size: 17px;
+	padding: 25px;
+	background: rgba(0, 0, 0, 0.6);
+	margin: 450px 0 0 0
+	}
+
+	.slides img {
+	transition: all 0.2s linear;
+	}
+	.slides .mascara {
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease-in-out;
+	}
+	.slides .mascara h2 {
+	transform: translateX(-200px);/*Desplazamos a la izquierda*/
+	opacity: 0;
+	transition: all 0.7s ease-in-out;
+	}
+
+	.slides:hover img {
+	transform: scale(1.1);/*Damos un ligero zoom a la imagen*/
+	}
+	.slides:hover .mascara {
+	opacity: 1;
+	}
+	.slides:hover .mascara h2{
+	opacity: 1;
+	transform: translateX(0px);/*Regresamos a las posiciones originales*/
+	}
+
+
    .slidesjs-container{
    	height: 535px !important;
    }

@@ -7,8 +7,11 @@
 		<div class="main">
 			<div class="slides">	
 				{% for imagen in imagenes %}
-		   		<img src="{{ MEDIA_URL }}/media/{{ imagen.url }}">
-				{% endfor %}				
+		   		<div>
+		   		<img src="{{ MEDIA_URL }}/media/{{ imagen.url }}" />
+		   		<div class="mascara"><h2>{{ imagen.descripcion }}</h2></div>
+		   		</div>
+				{% endfor %}
 			</div>
 		</div>
 		<!-- FIN SLIDE -->
