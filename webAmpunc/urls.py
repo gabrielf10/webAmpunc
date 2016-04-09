@@ -42,6 +42,7 @@ urlpatterns = [
     url(r'^js/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'js')}),
     url(r'^css/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'css')}),
     url(r'^img/(?P<path>.*)$', 'django.views.static.serve',{'document_root': os.path.join(settings.STATIC_ROOT,'img')}),
+    url(r'^favicon.ico/$', lambda x: HttpResponseRedirect(settings.STATIC_URL+'ico/favicon.ico')), #google chrome favicon fix
 ]
 
 
