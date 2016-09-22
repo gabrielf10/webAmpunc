@@ -207,6 +207,7 @@ header {
 header nav{
 	width: 100%;
 	background: #203773;
+	height: 90px;
 }
 
 header nav img{
@@ -235,7 +236,7 @@ header nav ul li{
 header nav ul li a{
 	color: #F1F1F1;
 	font-size: 1.2em;
-	padding: 1.2em 1em 1.2em 1em;
+	padding: 1.5em 1em;
 	font-weight: semi-bold;
 	display: block;
 	text-decoration: none;

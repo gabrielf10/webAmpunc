@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'g7z#2#1ah3a$x1&-0)#5o%#87(6%w!#w)8_af5-0k%boq-z7^z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['http://ampunc.org.ar/','www.ampunc.org.ar','ampunc.org.ar','http://www.ampunc.org.ar']

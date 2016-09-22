@@ -14,7 +14,7 @@
  	<h2>{{ proyecto.titulo }}</h2>
  	<hr>
  	<h3>{{ proyecto.subtitulo}}</h3><br>
- 	<img src="{{ MEDIA_URL }}/media/{{ proyecto.url }}">
+ 	<img src="{{ proyecto.imagen.url }}">
  	<div class="parteizq">
  		<p>{{ proyecto.descripcion_izq|safe}}</p>
  	</div>
