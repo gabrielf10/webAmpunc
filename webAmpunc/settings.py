@@ -46,11 +46,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'administrador',
     'imagekit',
     'contact_form',
     'ckeditor',
     'favicon',
+    'administrador',
+    'sistema',
 
 )
 
