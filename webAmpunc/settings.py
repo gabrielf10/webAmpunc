@@ -52,6 +52,8 @@ INSTALLED_APPS = (
     'favicon',
     'administrador',
     'sistema',
+    'nested_admin',
+    'nested_inline',
 
 )
 

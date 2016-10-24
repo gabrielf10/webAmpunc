@@ -1,6 +1,25 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import *
+
+class Servicio(models.Model):
+	csocial = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	gadministrativos = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	cextraordinaria = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	curbanizacion = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	cterreno = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	otros = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del campo otros.")
+	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+
+class Aporte(models.Model):
+	socio = models.ForeignKey(Socio)
+	servicio = models.ForeignKey(Servicio)
+	cantidad = models.PositiveIntegerField()
+	num_factura = models.PositiveIntegerField()
+	total = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 
 class Socio(models.Model):
 	nombre = models.CharField(max_length=255)
@@ -12,7 +31,7 @@ class Socio(models.Model):
 
 	def __unicode__(self):
 		return self.nombre
-	
+			
 	class Meta:
 		ordering = ('id',)
 
@@ -36,7 +55,7 @@ class Proyecto(models.Model):
 		ordering = ('id',)
 
 class Manzana(models.Model):
-	proyecto = models.ForeignKey(Proyecto)
+	proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE,)
 	nombre = models.CharField(max_length=255)
 
 	def __unicode__(self):
@@ -45,14 +64,25 @@ class Manzana(models.Model):
 		ordering = ('id',)
 
 class Lote(models.Model):
-	manzana = models.ForeignKey(Manzana)
+	numero = models.CharField(max_length=3)
+	manzana = models.ForeignKey(Manzana, on_delete=models.CASCADE,)
 	superficie = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	ocupado = models.BooleanField(default=False)
+	socio = models.ForeignKey(Socio)
 
 	def __unicode__(self):
-		return str(self.id)
+		return str(self.numero)
 	class Meta:
 		ordering = ('id',)
+
+class Deuda(models.Model):
+	nombre = models.CharField(max_length=255)
+	importe = models.DecimalField(max_digits=7, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+
+class SocioDeuda(models.Model):
+	socio = models.ForeignKey(Socio)
+	deuda = models.ForeignKey(Deuda)
+	cantidad = models.PositiveIntegerField()
 
 
 

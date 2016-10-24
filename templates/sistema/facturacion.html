@@ -1,0 +1,33 @@
+{% extends 'sistema/sistema.html' %}
+	{% block contenido %}
+		<h1>Facturacion</h1>
+		<br>
+		<br>
+		<table class="table table-hover">
+			<thead>
+		      <tr>
+		        <th>Nombre</th>
+		        <th>Zona</th>
+		        <th>Dirección</th>
+		        <th>Valor de Terreno</th>
+		        <th>Valor Aprox. Urbanizacion</th>
+		        <th>Inicio de Proyecto</th>
+		        <th>Acciones</th>
+		      </tr>
+    		</thead>
+    		<tbody>
+    		{% for proyecto in proyectos%}
+			<tr>
+				<td>{{ proyecto.nombre }}</td>
+				<td>{{ proyecto.zona }}</td>
+				<td>{{ proyecto.direccion }}</td>
+				<td>{{proyecto.valor_m2_terreno}}</td>
+				<td>{{proyecto.valor_m2_urbanizacion}}</td>
+				<td>{{ proyecto.fecha_inicio }}</td>
+				<td><a href="">Ver</a> / <a href="#">Imprimir</a></td>
+			</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</section>
+	{% endblock %}

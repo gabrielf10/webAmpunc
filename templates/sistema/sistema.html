@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sistema</title>
+	{% load staticfiles %}
+
+	<link rel="shortcut icon" href="{{ STATIC_URL }}ico/favicon.ico">   
+	<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/sistema.css' %}" media="screen">	
+	<link rel="stylesheet" type="text/css" href="{% static '/css/fonts.css' %}">
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+	<script src="{% static '/js/menu.js' %}"></script>
+	<script src="{% static '/js/jquery.slides.min.js' %}"></script>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-inverse">
+			 <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="{% url 'admin:index'%}"><strong>SISTEMA AMPUNC</strong></a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class="{% if url == 'proyectos' %}active{% endif %}"><a href="{% url 'sistema' %}">Proyectos</a></li>
+			      <li class ="{% if url == 'socio' %}active{% endif %}"><a href="{% url 'socio'%}">Socios</a></li>
+			      <li class =""><a href="">Reportes</a></li>
+			      <li class=""><a href="#">Acerca de</a></li>
+			    </ul>
+  			</div>
+		</nav>
+	</header>
+	<section class="container">
+		{% block contenido%}
+		{% endblock %}
+	</section>
+	
+</body>
+</html>
