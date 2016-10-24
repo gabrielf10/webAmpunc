@@ -4,22 +4,6 @@ from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import *
 
-class Servicio(models.Model):
-	csocial = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	gadministrativos = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	cextraordinaria = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	curbanizacion = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	cterreno = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	otros = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del campo otros.")
-	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-
-class Aporte(models.Model):
-	socio = models.ForeignKey(Socio)
-	servicio = models.ForeignKey(Servicio)
-	cantidad = models.PositiveIntegerField()
-	num_factura = models.PositiveIntegerField()
-	total = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 
 class Socio(models.Model):
 	nombre = models.CharField(max_length=255)
@@ -34,6 +18,23 @@ class Socio(models.Model):
 			
 	class Meta:
 		ordering = ('id',)
+
+class Servicio(models.Model):
+	nombre = models.CharField(max_length=100)
+	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
+	def __unicode__(self):
+		return self.nombre
+	
+class Factura(models.Model):
+	num_factura = models.PositiveIntegerField(unique=True)
+	socio = models.ForeignKey(Socio)
+	servicio = models.ForeignKey(Servicio)
+	cantidad = models.PositiveIntegerField()
+	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	def _calcular_total(self):
+		return self.cantidad*(servicio.importe)
+	total = property(_calcular_total)
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)

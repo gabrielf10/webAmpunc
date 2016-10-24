@@ -4,6 +4,9 @@ django-ckeditor==5.0.3
 django-contact-form==1.1
 django-favicon==0.1.2
 django-imagekit==3.2.7
+django-nested-admin==3.0.12
+django-nested-inline==0.3.6
 pilkit==1.1.13
 Pillow==3.0.0
+python-monkey-business==1.0.0
 six==1.10.0

@@ -3,7 +3,14 @@
 from django.contrib import admin
 from django.contrib import admin
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin
-from .models import Servicio, Socio, Proyecto, Zona, Manzana, Lote, SocioDeuda
+from .models import Factura, Servicio, Socio, Proyecto, Zona, Manzana, Lote, SocioDeuda
+
+
+@admin.register(Factura)
+class AdminFactura(admin.ModelAdmin):
+	list_display = ('num_factura','total')
+	list_filter = ('num_factura',)
+	search_fields = ['num_factura']
 
 @admin.register(Servicio)
 class AdminServicio(admin.ModelAdmin):
