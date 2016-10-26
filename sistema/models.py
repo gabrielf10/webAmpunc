@@ -29,12 +29,17 @@ class Servicio(models.Model):
 class Factura(models.Model):
 	num_factura = models.PositiveIntegerField(unique=True)
 	socio = models.ForeignKey(Socio)
-	servicio = models.ForeignKey(Servicio)
-	cantidad = models.PositiveIntegerField()
+	
 	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	def _calcular_total(self):
 		return self.cantidad*(servicio.importe)
 	total = property(_calcular_total)
+
+class DetalleFactura(models.Model):
+	factura = models.ForeignKey(Factura)
+	cantidad = models.PositiveIntegerField()
+	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	servicio = models.ForeignKey(Servicio)
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)

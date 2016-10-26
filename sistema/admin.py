@@ -3,7 +3,12 @@
 from django.contrib import admin
 from django.contrib import admin
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin
-from .models import Factura, Servicio, Socio, Proyecto, Zona, Manzana, Lote, SocioDeuda
+from .models import DetalleFactura, Factura, Servicio, Socio, Proyecto, Zona, Manzana, Lote, SocioDeuda
+
+@admin.register(DetalleFactura)
+class AdminDetalleFactura(admin.ModelAdmin):
+	list_display = ('id',)
+	
 
 
 @admin.register(Factura)
