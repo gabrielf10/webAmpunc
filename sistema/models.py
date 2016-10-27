@@ -3,7 +3,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import *
-from sistema import utilerias
+#from sistema import utilerias
 
 
 class Socio(models.Model):
@@ -17,7 +17,7 @@ class Socio(models.Model):
 	fecha_ingreso = models.DateField()
 	def save(self, **kwargs):
 		slug_str = "%s" % (self.nombre)
-		utilerias.unique_slugify(self, slug_str)
+		#utilerias.unique_slugify(self, slug_str)
 		super(Socio, self).save(**kwargs)
 
 	def get_absolute_url(self):
