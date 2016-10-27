@@ -1,0 +1,72 @@
+{% extends 'sistema/sistema.html' %}
+	{% block contenido %}
+	<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Modal Header</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Some text in the modal.</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+
+		  </div>
+		</div>
+
+		<h1>{{ socio.nombre }} {{ socio.apellido }}</h1>
+		<div class="form-group pull-right">
+		    <input type="text" class="search form-control" placeholder="Buscar">
+		</div>
+		<span class="counter pull-right"></span>
+		<br>
+		<br>
+		<h3>Proyectos:</h3>
+		<table class="table table-hover table-bordered results">
+			<thead>
+		      <tr>
+		      	<th>N°</th>
+		        <th>Proyecto</th>
+		        <th>Manzana</th>
+		        <th>Lote</th>
+		        <th>Superficie</th>
+		        <th>Dirección</th>
+		        <th>Telefono</th>
+		        <th>Email</th>
+		        <th>Fecha Ingreso</th>
+		        <th>Acciones</th>
+		      </tr>
+		      <tr class="warning no-result">
+			      <td colspan="12"><i class="fa fa-warning"></i> No hay resultado</td>
+			  </tr>
+    		</thead>
+    		<tbody>
+    		{% for socio in socios%}
+			<tr>
+				{% for lotesito in socio.lote_set.all %}
+				<th scope="row">{{forloop.counter}}</th>
+				<td>{{ socio.nombre }}</td>
+				<td>{{ socio.apellido }}</td>
+					<td class="col-md-4">{{ lotesito.manzana.proyecto.nombre }}</td>				 
+					<td>{{ lotesito.manzana }}</td>				
+					<td>{{ lotesito.numero }}</td>
+					<td>{{lotesito.superficie }}</td>
+				<td class="col-md-6">{{ socio.direccion }}</td>
+				<td>{{ socio.telefono }}</td>
+				<td>{{ socio.email }}</td>
+				<td>{{ socio.fecha_ingreso }}</td>
+				<td><a href="{{ socio.slug }}">Ver</a> / <a href="#">Imprimir</a></td>
+			</tr>
+				{% endfor %}
+			{% endfor %}
+			</tbody>
+		</table>
+	</section>
+	{% endblock %}

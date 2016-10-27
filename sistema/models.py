@@ -3,15 +3,25 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import *
+from sistema import utilerias
 
 
 class Socio(models.Model):
 	nombre = models.CharField(max_length=255)
 	apellido = models.CharField(max_length=255)
+	slug = models.SlugField(
+	max_length=60, blank=True, null=True, editable=False)	
 	direccion = models.CharField(max_length=255)
 	telefono = models.PositiveIntegerField(unique=True)
 	email = models.EmailField(max_length=255)
 	fecha_ingreso = models.DateField()
+	def save(self, **kwargs):
+		slug_str = "%s" % (self.nombre)
+		utilerias.unique_slugify(self, slug_str)
+		super(Socio, self).save(**kwargs)
+
+	def get_absolute_url(self):
+		return reverse('noticias-etiqueta-list', args=[self.slug])
 
 	def __unicode__(self):
 		return self.nombre
@@ -23,17 +33,12 @@ class Socio(models.Model):
 class Factura(models.Model):
 	num_factura = models.PositiveIntegerField(unique=True)
 	socio = models.ForeignKey(Socio)
-<<<<<<< HEAD
-	cantidad = models.PositiveIntegerField()
-=======
-	
->>>>>>> ca3a05a0c61ed26dc09ca9fa382a14a1d5ab7d80
 	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	def _calcular_total(self):
 		return self.cantidad*(servicio.importe)
 	total = property(_calcular_total)
 
-<<<<<<< HEAD
+
 class Servicio(models.Model):
 	factura = models.ForeignKey(Factura)
 	nombre = models.CharField(max_length=100)
@@ -41,13 +46,12 @@ class Servicio(models.Model):
 	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
 	def __unicode__(self):
 		return self.nombre
-=======
+
 class DetalleFactura(models.Model):
 	factura = models.ForeignKey(Factura)
 	cantidad = models.PositiveIntegerField()
 	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	servicio = models.ForeignKey(Servicio)
->>>>>>> ca3a05a0c61ed26dc09ca9fa382a14a1d5ab7d80
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)

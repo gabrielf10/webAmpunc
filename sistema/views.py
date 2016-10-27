@@ -28,3 +28,11 @@ def sistema_socio(request):
 		'url':'socio'
 	}
 	return HttpResponse(template.render(context, request))
+
+def sistema_socio_slug(request, slug):
+    socio = Socio.objects.get(slug=slug)
+    template = loader.get_template('sistema/socios_slug.html')
+    context = {
+		'socio': socio,
+	}
+    return HttpResponse(template.render(context, request))
