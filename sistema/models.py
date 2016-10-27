@@ -19,22 +19,23 @@ class Socio(models.Model):
 	class Meta:
 		ordering = ('id',)
 
-class Servicio(models.Model):
-	nombre = models.CharField(max_length=100)
-	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
-	def __unicode__(self):
-		return self.nombre
 	
 class Factura(models.Model):
 	num_factura = models.PositiveIntegerField(unique=True)
 	socio = models.ForeignKey(Socio)
-	servicio = models.ForeignKey(Servicio)
 	cantidad = models.PositiveIntegerField()
 	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	def _calcular_total(self):
 		return self.cantidad*(servicio.importe)
 	total = property(_calcular_total)
+
+class Servicio(models.Model):
+	factura = models.ForeignKey(Factura)
+	nombre = models.CharField(max_length=100)
+	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
+	def __unicode__(self):
+		return self.nombre
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)
