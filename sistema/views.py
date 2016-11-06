@@ -7,6 +7,10 @@ from django.http import HttpResponse
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 
+import pdfkit
+import datetime
+
+
 def sistema_inicio(request):
 	proyectos = Proyecto.objects.order_by('id')
 	template = loader.get_template('sistema/proyectos.html')
@@ -36,3 +40,10 @@ def sistema_socio_slug(request, slug):
 		'socio': socio,
 	}
     return HttpResponse(template.render(context, request))
+
+
+def pdf(request):
+	fecha = str(datetime.datetime.now())[:10]
+	dt = datetime.datetime.strptime(fecha, '%Y-%m-%d').strftime('%Y %m %d')
+	pdf = pdfkit.from_url("http://127.0.0.1:8000/sistema/socios/", "socios%s.pdf" % fecha )
+	return HttpResponse("Se genero el reporte")

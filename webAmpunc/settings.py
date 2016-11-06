@@ -54,6 +54,8 @@ INSTALLED_APPS = (
     'sistema',
     'nested_admin',
     'nested_inline',
+    'wkhtmltopdf',
+
 
 )
 
@@ -105,7 +107,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'es-ar'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Mendoza'
 
 USE_I18N = True
 
@@ -162,3 +164,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "ampuncmutual@gmail.com"
 EMAIL_HOST_PASSWORD = "Girasol1"
+
+
+WKHTMLTOPDF_CMD = '/informes/'
+WKHTMLTOPDF_CMD_OPTIONS = {
+    'quiet': True,
+}

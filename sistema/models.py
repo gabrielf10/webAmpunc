@@ -33,14 +33,13 @@ class Socio(models.Model):
 class Factura(models.Model):
 	num_factura = models.PositiveIntegerField(unique=True)
 	socio = models.ForeignKey(Socio)
-	interes = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	fecha = models.DateField() 
 	def _calcular_total(self):
 		return self.cantidad*(servicio.importe)
 	total = property(_calcular_total)
 
 
 class Servicio(models.Model):
-	factura = models.ForeignKey(Factura)
 	nombre = models.CharField(max_length=100)
 	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
@@ -49,9 +48,9 @@ class Servicio(models.Model):
 
 class DetalleFactura(models.Model):
 	factura = models.ForeignKey(Factura)
+	servicio = models.ForeignKey(Servicio)
 	cantidad = models.PositiveIntegerField()
 	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	servicio = models.ForeignKey(Servicio)
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)
@@ -86,7 +85,8 @@ class Lote(models.Model):
 	manzana = models.ForeignKey(Manzana, on_delete=models.CASCADE,)
 	superficie = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	ocupado = models.BooleanField(default=False)
-	socio = models.ForeignKey(Socio)
+	#no es obligatoria
+	socio = models.ForeignKey(Socio, blank=True, null=True)
 
 	def __unicode__(self):
 		return str(self.numero)

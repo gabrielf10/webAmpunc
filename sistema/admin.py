@@ -8,20 +8,6 @@ from .models import DetalleFactura, Factura, Servicio, Socio, Proyecto, Zona, Ma
 @admin.register(DetalleFactura)
 class AdminDetalleFactura(admin.ModelAdmin):
 	list_display = ('id',)
-	
-
-class AdminServicioInline(admin.StackedInline):
-	model = Servicio
-	extra = 1
-	
-
-@admin.register(Factura)
-class AdminFactura(admin.ModelAdmin):
-	list_display = ('num_factura','total')
-	list_filter = ('num_factura',)
-	search_fields = ['num_factura']
-	model = Factura
-	inlines = [AdminServicioInline]
 
 	
 #Admin Registro de socios

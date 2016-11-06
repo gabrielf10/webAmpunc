@@ -17,7 +17,7 @@
 			        <th>Valor de Terreno</th>
 			        <th>Valor Aprox. Urbanizacion</th>
 			        <th>Inicio de Proyecto</th>
-			        <th>Acciones</th>
+			        <th>Lotes Disponibles</th>
 		      	</tr>
 		        <tr class="warning no-result">
 			      	<td colspan="12"><i class="fa fa-warning"></i> No hay resultado</td>
@@ -34,7 +34,7 @@
 				<td>{{proyecto.valor_m2_urbanizacion}}</td>
 				<td>{{ proyecto.fecha_inicio }}</td>
 				<td> 
-					<button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal{{forloop.counter}}">Ver</button>
+					<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal{{forloop.counter}}">Ver</button>
 				</td>
 			</tr>
 
@@ -49,14 +49,18 @@
 			        <h4 class="modal-title">{{ socio.nombre }} {{ socio.apellido }}</h4>
 			      </div>
 			      <div class="modal-body">
+			      	<h2>Proyecto "{{ proyecto.nombre }}"</h2>
+			      	<h5>Lotes Disponibles</h5>
 			          {% for manzanita in proyecto.manzana_set.all %}
-						<p>Manzana: {{ manzanita.nombre }}</p>
+						<h3>Manzana "{{ manzanita.nombre }}"</h3>
+						<hr>
 						{% for lotesito in manzanita.lote_set.all %}
-							<p>Numero: {{ lotesito.numero }}</p>				
+							{% if lotesito.ocupado == False %}								
+							<p>Casa: "{{ lotesito.numero }}"</p>				
 							<p>Superficie: {{ lotesito.superficie }}</p>
-							<p>Ocupado: {{lotesito.socio }}</p>
 							<hr style="height:30px">
 							<hr>										 	
+							{% endif %}
 						{% endfor %}				 
 					{% endfor %}
 						<p><a href="#">Imprimir</a></p>

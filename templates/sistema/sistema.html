@@ -27,7 +27,8 @@
 			    <ul class="nav navbar-nav">
 			      <li class="{% if url == 'proyectos' %}active{% endif %}"><a href="{% url 'sistema' %}">Proyectos</a></li>
 			      <li class ="{% if url == 'socio' %}active{% endif %}"><a href="{% url 'socio'%}">Socios</a></li>
-			      <li class =""><a href="">Reportes</a></li>
+			      <li class ="{% if url == 'socio' %}active{% endif %}"><a href="{% url 'socio'%}">Facturacion</a></li>
+			      <li class =""><a href="#">Reportes</a></li>
 			      <li class=""><a href="#">Acerca de</a></li>
 			    </ul>
   			</div>
