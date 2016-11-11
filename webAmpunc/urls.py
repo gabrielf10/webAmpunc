@@ -44,7 +44,7 @@ urlpatterns = [
     url(r'^_nested_admin/', include('nested_admin.urls')),
     url(r'^favicon.ico/$', lambda x: HttpResponseRedirect(settings.STATIC_URL+'ico/favicon.ico')), #google chrome favicon fix
     
-    url(r'^sistema/', include('sistema.urls')),
+    url(r'^sistema/', include('sistema.urls', namespace='sistema')),
     
 
 

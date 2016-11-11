@@ -6,6 +6,14 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse_lazy
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import (
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 import pdfkit
 import datetime
@@ -32,6 +40,12 @@ def sistema_socio(request):
 		'url':'socio'
 	}
 	return HttpResponse(template.render(context, request))
+
+class CrearSocioView(CreateView):
+	model = Socio
+	success_url = reverse_lazy('sistema:sistema')
+	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+	
 
 def sistema_socio_slug(request, slug):
     socio = Socio.objects.get(slug=slug)
