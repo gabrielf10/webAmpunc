@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from sistema.models import Socio, Lote, Proyecto
+from sistema.models import Socio, Lote, Proyecto, Factura
 from django.template import loader # en vez de usar render para templates
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, get_object_or_404
@@ -19,6 +19,8 @@ import pdfkit
 import datetime
 
 
+
+
 def sistema_inicio(request):
 	proyectos = Proyecto.objects.order_by('id')
 	template = loader.get_template('sistema/proyectos.html')
@@ -31,6 +33,8 @@ def sistema_inicio(request):
 	#socios = Socio.objects.all()
 	#lotes = Socio.objects.all()
 	#return render_to_response('sistema/proyectos.html',{'socios':socios, 'lotes':lotes}, RequestContext(request))
+
+#--------SOCIO--------------------------------
 def sistema_socio(request):
 	socios = Socio.objects.order_by('id')
 	template = loader.get_template('sistema/socios.html')
@@ -41,11 +45,12 @@ def sistema_socio(request):
 	}
 	return HttpResponse(template.render(context, request))
 
+#CLASS BASED VIEWS
 class CrearSocioView(CreateView):
 	model = Socio
 	success_url = reverse_lazy('sistema:sistema')
 	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
-	
+#-------FIN SOCIO ----------------------	
 
 def sistema_socio_slug(request, slug):
     socio = Socio.objects.get(slug=slug)
@@ -61,3 +66,14 @@ def pdf(request):
 	dt = datetime.datetime.strptime(fecha, '%Y-%m-%d').strftime('%Y %m %d')
 	pdf = pdfkit.from_url("http://127.0.0.1:8000/sistema/socios/", "socios%s.pdf" % fecha )
 	return HttpResponse("Se genero el reporte")
+
+#--------Facturacion--------------------------------
+def sistema_facturacion(request):
+	factura = Factura.objects.order_by('id')
+	template = loader.get_template('sistema/facturacion.html')
+	context = {
+		'facturas': factura,
+		#variable url para controlar la class active en el html
+		'url':'factura'
+	}
+	return HttpResponse(template.render(context, request))

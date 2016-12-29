@@ -1,33 +1,134 @@
 {% extends 'sistema/sistema.html' %}
-	{% block contenido %}
-		<h1>Facturacion</h1>
-		<br>
-		<br>
-		<table class="table table-hover">
-			<thead>
-		      <tr>
-		        <th>Nombre</th>
-		        <th>Zona</th>
-		        <th>Dirección</th>
-		        <th>Valor de Terreno</th>
-		        <th>Valor Aprox. Urbanizacion</th>
-		        <th>Inicio de Proyecto</th>
-		        <th>Acciones</th>
-		      </tr>
-    		</thead>
-    		<tbody>
-    		{% for proyecto in proyectos%}
-			<tr>
-				<td>{{ proyecto.nombre }}</td>
-				<td>{{ proyecto.zona }}</td>
-				<td>{{ proyecto.direccion }}</td>
-				<td>{{proyecto.valor_m2_terreno}}</td>
-				<td>{{proyecto.valor_m2_urbanizacion}}</td>
-				<td>{{ proyecto.fecha_inicio }}</td>
-				<td><a href="">Ver</a> / <a href="#">Imprimir</a></td>
-			</tr>
-			{% endfor %}
-			</tbody>
-		</table>
+	{% block contenido %}	
+	{% load staticfiles %}	
+			<div class="container">
+				<div class="row">
+            		
+					<div class="col-xs-6">
+					<div class="marcagrande">
+						<a href="/"><img src="{% static "/img/marcagrande.png" %}" alt="logo-ampunc"></a>
+					</div>
+					</div>
+					<div class="col-xs-6 text-right">
+					<h1>FACTURA</h1>
+					<h1><small>Factura #001</small></h1>
+					</div>					 
+					<hr />
+					<div class="row">
+						<div class="col-xs-5">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4><a>AMPUNC</a></h4>
+								</div>
+								<div class="panel-body">
+									Datos de Ampunc
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-5 col-xs-offset-2 text-right">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4><a>Cliente</a></h4>
+								</div>
+								<div class="panel-body">
+									Datos del Cliente
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<table class="table table-bordered">
+					<thead>
+					<tr>
+					<th>
+					<h4>Servicio</h4>
+					</th>
+					<th>
+					<h4>Descripción</h4>
+					</th>
+					<th>
+					<h4>Cantidad</h4>
+					</th>
+					<th>
+					<h4>Importe</h4>
+					</th>
+					<th>
+					<h4>Sub-Total</h4>
+					</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td>Cuota Social</td>
+					<td><a href="#"> Ago/Set/Oct 2015 </a></td>
+					<td class=" text-right ">3</td>
+					<td class=" text-right ">25.00 $</td>
+					<td class=" text-right ">75.00 $</td>
+					</tr>
+					<tr>
+					<td>Gastos Administrativos</td>
+					<td><a href="#"> Ago/Set/Oct 2015 </a></td>
+					<td class="text-right">3</td>
+					<td class="text-right ">25.00 $</td>
+					<td class="text-right ">75.00 $</td>
+					</tr>
+					<tr>
+					<td>Urbanizacion</td>
+					<td><a href="#"> Marzo/Abril/Mayo/Jun/Jul/Ago/Set/Oct 2015</a></td>
+					<td class="text-right ">8</td>
+					<td class="text-right">1000.00 $</td>
+					<td class="text-right">8000.00 $</td>
+					</tr>
+					</tbody>
+					</table>
+					
+					<div class="row text-right">
+						<div class="col-xs-3 col-xs-offset-7">
+							<strong>
+							<p>Sub Total:</p>
+							<p>Impuestos (IVA 21%):</p>
+							<p>Total:</p>
+							</strong>
+						</div>
+						<div class="col-xs-2">
+							<strong>
+							<p>8,150.00 $</p>
+							<p>203.75 $</p>
+							<p>8,353.75 $</p>
+							</strong>
+						</div>
+					</div>
+					<div class="row">
+						<div class = "col-xs-5">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h4>Datos bancarios</h4>
+								</div>
+								<div class="panel-body">
+									 Titular nombre
+									 Nombre del banco
+									 Número de cuenta: 12345678
+									 
+								</div>
+							</div>
+						</div>
+					<div class="col-xs-7">
+						<div class="span7">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h4> Datos de contacto </h4>
+								</div>
+								<div class=" panel-body ">
+									 Datos de contacto email telefono web
+									<h4><small> El pago debe ser por transferencia bancaria </h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
+								
 	</section>
 	{% endblock %}
