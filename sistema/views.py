@@ -48,8 +48,20 @@ def sistema_socio(request):
 #CLASS BASED VIEWS
 class CrearSocioView(CreateView):
 	model = Socio
-	success_url = reverse_lazy('sistema:sistema')
+	success_url = reverse_lazy('sistema:socio')
 	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+
+class EditarSocioView(UpdateView):
+	model = Socio
+	success_url = reverse_lazy('sistema:socio')
+	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+
+class EliminarSocioView(DeleteView):
+	model = Socio
+	template_name = "sistema/socio_delete.html"
+	success_url = reverse_lazy('sistema:socio')
+	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+
 #-------FIN SOCIO ----------------------	
 
 def sistema_socio_slug(request, slug):
