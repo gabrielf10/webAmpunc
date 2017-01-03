@@ -4,11 +4,6 @@ from django.contrib import admin
 from django.contrib import admin
 from nested_inline.admin import NestedStackedInline, NestedModelAdmin
 from .models import DetalleFactura, Factura, Servicio, Socio, Proyecto, Zona, Manzana, Lote, SocioDeuda
-
-@admin.register(DetalleFactura)
-class AdminDetalleFactura(admin.ModelAdmin):
-	list_display = ('id',)
-
 	
 #Admin Registro de socios
 @admin.register(Socio)
@@ -62,3 +57,16 @@ class AdminProyecto(NestedModelAdmin):
 	model = Proyecto 
 	inlines = [AdminManzana]
 #Fin Nested Inline
+
+class DetalleFacturaInline(admin.TabularInline):
+    model = DetalleFactura
+
+@admin.register(Factura)
+class Factura(admin.ModelAdmin):
+    inlines = (DetalleFacturaInline,)
+
+@admin.register(Servicio)
+class AdminZona(admin.ModelAdmin):
+	list_display = ('nombre',)
+	list_filter = ('nombre',)
+

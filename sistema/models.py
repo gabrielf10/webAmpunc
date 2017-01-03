@@ -29,15 +29,27 @@ class Socio(models.Model):
 	class Meta:
 		ordering = ('id',)
 
+def increment_numero_factura():
+		last_invoice = Factura.objects.all().order_by('id').last()
+		if not last_invoice:
+			return 'MAG0001'
+		num_factura = last_invoice.num_factura
+		invoice_int = int(num_factura.split('MAG')[-1])
+		new_invoice_int = invoice_int + 1
+		new_invoice_no = 'MAG' + str(new_invoice_int)
+		return new_invoice_no
+
+def _calcular_total(self):
+	return self.cantidad*(servicio.importe)
+	total = property(_calcular_total)
 	
 class Factura(models.Model):
-	num_factura = models.PositiveIntegerField(unique=True)
+	#num_factura = models.PositiveIntegerField(unique=True)
+	num_factura = models.CharField(max_length = 500, default = increment_numero_factura, null = True, blank = True)
 	socio = models.ForeignKey(Socio)
 	fecha = models.DateField() 
-	def _calcular_total(self):
-		return self.cantidad*(servicio.importe)
-	total = property(_calcular_total)
-
+	def __unicode__(self):
+		return self.num_factura
 
 class Servicio(models.Model):
 	nombre = models.CharField(max_length=100)
@@ -51,6 +63,8 @@ class DetalleFactura(models.Model):
 	servicio = models.ForeignKey(Servicio)
 	cantidad = models.PositiveIntegerField()
 	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	def  __unicode__(self):
+		return self.importe
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)
