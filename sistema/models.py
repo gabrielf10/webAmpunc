@@ -61,10 +61,16 @@ class Servicio(models.Model):
 class DetalleFactura(models.Model):
 	factura = models.ForeignKey(Factura)
 	servicio = models.ForeignKey(Servicio)
-	cantidad = models.PositiveIntegerField()
-	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	cantidad = models.DecimalField(max_digits=6, decimal_places=0, validators=[MinValueValidator(Decimal('0.01'))])
+	subtotal = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+
+	def _get_importe(self):
+		return self.cantidad*self.subtotal
+
+	importe = property(_get_importe)
+
 	def  __unicode__(self):
-		return self.importe
+		return self.servicio.nombre
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)

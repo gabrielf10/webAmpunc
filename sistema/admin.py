@@ -58,15 +58,26 @@ class AdminProyecto(NestedModelAdmin):
 	inlines = [AdminManzana]
 #Fin Nested Inline
 
+#Trabajando con la facturacion en el admin
 class DetalleFacturaInline(admin.TabularInline):
     model = DetalleFactura
+    list_display = ['servicio', 'cantidad', 'subtotal', 'importe']
+    #readonly_fields = ['subtotal', ]
 
 @admin.register(Factura)
 class Factura(admin.ModelAdmin):
-    inlines = (DetalleFacturaInline,)
+	model = Factura
+	inlines = (DetalleFacturaInline,)
+
 
 @admin.register(Servicio)
 class AdminZona(admin.ModelAdmin):
 	list_display = ('nombre',)
 	list_filter = ('nombre',)
 
+#este funciona mostrar el importe pero no me funciona en el inline dentro de Factura si lo soluciono
+#en DetalleFacturaInline esta clase desaparece
+@admin.register(DetalleFactura)
+class AdminDetalleFactura(admin.ModelAdmin):
+	model = DetalleFactura
+	list_display = ['servicio', 'cantidad', 'subtotal', 'importe']
