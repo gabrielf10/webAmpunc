@@ -1,0 +1,26 @@
+-----------------------------Listo--------------------------
+  Administrador:
+- Sistema de Alta Baja Modificacion Proyecto > Manzana > Lote
+- Alta Baja Modificacion de Socios Verificar vista del admin
+- Asignacion de Socios a Lote
+- Sistema de Lotes Disponibles
+- Sistema de Servicios
+- Sistema de Gestion de Zonas para los proyectos
+  Web:
+- Seccion Proyectos(buscador, tabla de proyectos vigentes(agregar un campo para proyecto finalizado), Ver Lotes disponibles)
+- Seccion Socios (buscador, tabla de socios (agregar un campo para proyecto finalizado), Ver Editar o Eliminar Socio ? Cambiar boton por dar de baja???????)
+- Facturador Diseño
+
+
+-----------------------------Faltantes-----------------------
+- Login y required (Niveles de acceso)
+- Facturador y Reporte
+- ficha deuda del socio
+- ficha aporte del socio
+- En reportes agregar socios dados de baja filtros??? 
+- terminar facturador
+- Reportes(solo los reportes generales)
+
+- Error en la fecha de ingreso de los socios
+- Agregar si es adherente o no
+- Arreglar estilo de los formularios
