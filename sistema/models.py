@@ -12,6 +12,7 @@ class Socio(models.Model):
 	slug = models.SlugField(
 	max_length=60, blank=True, null=True, editable=False)	
 	direccion = models.CharField(max_length=255)
+	#por que positive integer field el telefono hay  q cambiar eso
 	telefono = models.PositiveIntegerField(unique=True)
 	email = models.EmailField(max_length=255)
 	fecha_ingreso = models.DateField()
@@ -50,6 +51,9 @@ class Factura(models.Model):
 	fecha = models.DateField() 
 	def __unicode__(self):
 		return self.num_factura
+
+
+#DetalleFactura.objects.filter(num_factura=factura).aggregate(Sum('importe'))
 
 class Servicio(models.Model):
 	nombre = models.CharField(max_length=100)

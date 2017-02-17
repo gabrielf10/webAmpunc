@@ -458,9 +458,13 @@ h2,
 .h2 {
 	font-size: 30px;
 }
+/* Modificado dessde linea 465 a 467*/
 h3,
 .h3 {
 	font-size: 24px;
+	background-color: #9C3334;
+	color: white;	
+	text-align: center;
 }
 h4,
 .h4 {
