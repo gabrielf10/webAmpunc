@@ -54,7 +54,6 @@ class Factura(models.Model):
 class Servicio(models.Model):
 	nombre = models.CharField(max_length=100)
 	importe = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
-	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
 	def __unicode__(self):
 		return self.nombre
 
@@ -63,6 +62,7 @@ class DetalleFactura(models.Model):
 	servicio = models.ForeignKey(Servicio)
 	cantidad = models.DecimalField(max_digits=6, decimal_places=0, validators=[MinValueValidator(Decimal('0.01'))])
 	subtotal = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
 
 	def _get_importe(self):
 		return self.cantidad*self.subtotal
