@@ -21,6 +21,7 @@ class Socio(models.Model):
 		#utilerias.unique_slugify(self, slug_str)
 		super(Socio, self).save(**kwargs)
 
+
 	def get_absolute_url(self):
 		return reverse('noticias-etiqueta-list', args=[self.slug])
 
@@ -65,16 +66,21 @@ class DetalleFactura(models.Model):
 	factura = models.ForeignKey(Factura)
 	servicio = models.ForeignKey(Servicio)
 	cantidad = models.DecimalField(max_digits=6, decimal_places=0, validators=[MinValueValidator(Decimal('0.01'))])
-	subtotal = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
+	valor = models.DecimalField(max_digits=6, decimal_places=2, validators=[MinValueValidator(Decimal('0.01'))])
 	descripcion = models.CharField(verbose_name="Descripción", max_length=100, help_text="Descripción del servicio.")
 
 	def _get_importe(self):
-		return self.cantidad*self.subtotal
+		return self.cantidad*self.importe
 
 	importe = property(_get_importe)
 
 	def  __unicode__(self):
 		return self.servicio.nombre
+
+	def _num_factura(self):
+		return self.factura.num_factura
+	numero_factura = property(_num_factura)
+
 
 class Zona(models.Model):
 	nombre = models.CharField(max_length=255)
@@ -101,6 +107,10 @@ class Manzana(models.Model):
 
 	def __unicode__(self):
 		return self.nombre
+
+	def socio_manzana(self):
+		return self.proyecto.nombre
+
 	class Meta:
 		ordering = ('id',)
 
@@ -114,6 +124,11 @@ class Lote(models.Model):
 
 	def __unicode__(self):
 		return str(self.numero)
+
+	def socio_lote(self):
+		return self.manzana.nombre
+	
+
 	class Meta:
 		ordering = ('id',)
 

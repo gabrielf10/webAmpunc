@@ -1,27 +1,50 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from .models import Socio
 from django import forms
 from django.forms.formsets import formset_factory
+from django.forms.extras.widgets import SelectDateWidget
 
-class SocioForm(forms.ModelForm):
+
+class SocioModelForm(forms.ModelForm):
+    nombre = forms.CharField(label='', widget= forms.TextInput(
+        attrs={
+            "class": "txt_nombre",
+            "placeholder": "Nombre del Socio",
+        }))
+    apellido = forms.CharField(label='',widget= forms.TextInput(
+        attrs={
+            "class": "txt_apellido",
+            "placeholder": "Apellido del Socio",
+        }))
+    direccion = forms.CharField(label='',widget= forms.TextInput(
+        attrs={
+            "class": "txt_direccion",
+            "placeholder": "Dirección del Socio",
+        }))
+    telefono = forms.CharField(label='',widget= forms.TextInput(
+        attrs={
+            "class": "txt_telefono",
+            "placeholder": "Teléfono del Socio",
+        }))
+    email = forms.EmailField(label='',widget= forms.EmailInput(
+        attrs={
+            "class": "txt_email",
+            "placeholder": "Email del Socio",
+        }))
+    
+    
+
     class Meta:
         model = Socio
+        fields = '__all__'
         widgets = {
-            'nombre': forms.TextInput(attrs={'class': 'myfieldclass'}),
-            'apellido': forms.TextInput(attrs={'class': 'myfieldclass'}),
-            'direccion': forms.TextInput(attrs={'class': 'myfieldclass'}),
-            'telefono': forms.TextInput(attrs={'class': 'myfieldclass'}),
-            'email': forms.TextInput(attrs={'class': 'myfieldclass'}),
-            'fecha_ingreso': forms.TextInput(attrs={'class': 'myfieldclass'}),
-        }
+        'fecha_ingreso': SelectDateWidget(),
+    }
+        
 
-nombre = models.CharField(max_length=255)
-	apellido = models.CharField(max_length=255)
-	slug = models.SlugField(
-	max_length=60, blank=True, null=True, editable=False)	
-	direccion = models.CharField(max_length=255)
-	telefono = models.PositiveIntegerField(unique=True)
-	email = models.EmailField(max_length=255)
-	fecha_ingreso = models.DateField()
+    
+
 
 
 class ProductForm(forms.Form):

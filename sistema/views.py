@@ -9,6 +9,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
+from .forms import SocioModelForm
+
 from django.views.generic.edit import (
     CreateView,
     UpdateView,
@@ -48,13 +50,17 @@ def sistema_socio(request):
 #CLASS BASED VIEWS
 class CrearSocioView(CreateView):
 	model = Socio
+	form_class = SocioModelForm
 	success_url = reverse_lazy('sistema:socio')
-	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+
+	
+
 
 class EditarSocioView(UpdateView):
 	model = Socio
+	form_class = SocioModelForm
 	success_url = reverse_lazy('sistema:socio')
-	fields = ['nombre', 'apellido', 'direccion', 'telefono', 'email','fecha_ingreso']
+	
 
 class EliminarSocioView(DeleteView):
 	model = Socio
